@@ -1,0 +1,123 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #242730;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.game-description {
+  font-size: 16px;
+  color: #fff; /* White color to make it readable against dark backgrounds */
+  margin-top: 100px;
+  margin-bottom: 20px; /* Adds space between the description and the button */
+  max-width: 600px; /* Limiting the width for better readability */
+  text-align: center; /* Centers the text within the div */
+  line-height: 1.5; /* Adjusts the spacing between lines for better readability */
+  font-family: 'Arial', sans-serif; /* Sets a commonly used font for the text */
+}
+
+
+.connect-four-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  grid-template-rows: repeat(6, 60px);
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(69, 122, 227);
+  border-radius: 10px;
+  margin-top: 100px;
+  padding: 5px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  color: currentColor;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.tile.R {
+  background-color: red;
+}
+
+.tile.Y {
+  background-color: yellow;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.tile.R-hover:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.tile.Y-hover:hover {
+  background-color: rgba(255, 255, 0, 0.6);
+}
+
+.game-over {
+  text-align: center;
+  border: #5468ff 8px;
+  border-style: dotted;
+  padding: 10px;
+  margin-top: 50px;
+  font-size: 1.5em;
+}
+
+.reset-button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  background-color: #0074a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #005983;
+}
+
+.start-btn {
+  font-family: 'Georgia', serif;
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  background-color: #0074a6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease-in-out; /* 添加 transform 过渡效果 */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.2); /* 与标题的阴影效果保持一致 */
+  letter-spacing: 1px; /* 与标题的字母间距保持一致 */
+
+  &:hover {
+      background-color: #005983;
+      transform: scale(1.05); /* 添加缩放效果 */
+  }
+}
