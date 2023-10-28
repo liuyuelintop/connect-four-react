@@ -9,48 +9,26 @@ body {
   padding: 20px 0;
 }
 
-.connect-four-title {
-  font-family: 'Georgia', serif;
-  font-size: 3em;
-  color: goldenrod; /* 这将被渐变颜色覆盖 */
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.2); /* 选择了 h1 样式中的更大的阴影 */
-  border: 2px solid goldenrod;
-  padding: 10px 20px;
-  background-color: #333; /* 如果渐变背景不适用，将采用这个颜色 */
-  display: inline-block;
-  transition: transform 0.3s ease-in-out;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
-  background: -webkit-linear-gradient(left, yellow, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-
-  &:hover {
-      transform: scale(1.05);
-  }
-}
-
-
-
 h1, h2 {
   text-align: center;
 }
 
-/* h1 {
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #fff;
-  background: -webkit-linear-gradient(left, yellow, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-  letter-spacing: 1px;
-} */
+.game-description {
+  font-size: 16px;
+  color: #fff; /* White color to make it readable against dark backgrounds */
+  margin-top: 100px;
+  margin-bottom: 20px; /* Adds space between the description and the button */
+  max-width: 600px; /* Limiting the width for better readability */
+  text-align: center; /* Centers the text within the div */
+  line-height: 1.5; /* Adjusts the spacing between lines for better readability */
+  font-family: 'Arial', sans-serif; /* Sets a commonly used font for the text */
+}
 
+
+.connect-four-container{
+  display: flex;
+  flex-direction: column;
+}
 
 .game-board {
   display: grid;
@@ -61,6 +39,7 @@ h1, h2 {
   position: relative;
   background-color: rgb(69, 122, 227);
   border-radius: 10px;
+  margin-top: 100px;
   padding: 5px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
 }
@@ -109,7 +88,7 @@ h1, h2 {
 }
 
 .reset-button {
-  margin-top: 20px;
+  margin-top: 50px;
   padding: 10px 20px;
   background-color: #0074a6;
   color: white;
@@ -122,4 +101,23 @@ h1, h2 {
 
 .reset-button:hover {
   background-color: #005983;
+}
+
+.start-btn {
+  font-family: 'Georgia', serif;
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  background-color: #0074a6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease-in-out; /* 添加 transform 过渡效果 */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.2); /* 与标题的阴影效果保持一致 */
+  letter-spacing: 1px; /* 与标题的字母间距保持一致 */
+
+  &:hover {
+      background-color: #005983;
+      transform: scale(1.05); /* 添加缩放效果 */
+  }
 }

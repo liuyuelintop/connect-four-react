@@ -120,7 +120,6 @@ const ConnectFour = () => {
   }
   return (
     <div className="connect-four-container">
-      <h1 className="connect-four-title">Connect Four</h1>
       <Board playerTurn={currentPlayer} placeTile={placeTile} tiles={tiles} />
       <GameOver gameState={gameState} />
       <button onClick={handleReset} className="reset-button">
