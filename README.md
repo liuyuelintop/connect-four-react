@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Connect Four with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository hosts a dynamic Connect Four game built using React. The inspiration for this project was drawn from a similar endeavor with a tic-tac-toe game following a tutorial by **Coding With Adam** on YouTube.
 
-## Available Scripts
+### Play the Game:
 
-In the project directory, you can run:
+Experience the game firsthand here:
+[https://liuyuelintop.github.io/connect-four-react/](https://liuyuelintop.github.io/connect-four-react/)
 
-### `npm start`
+## Resources:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### YouTube Tutorial
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Coding With Adam 🌟🌟🌟🌟🌟**
 
-### `npm test`
+For those interested in the original tutorial that inspired this project:
+[Build an Awesome Version of Tic Tac Toe in React Tutorial](https://www.youtube.com/watch?v=4Gt_YyGf6B0)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Original Github Repository:
 
-### `npm run build`
+For a deeper dive into the original tic-tac-toe game, visit:
+[CodingWith-Adam / tic-tac-toe-react](https://github.com/CodingWith-Adam/tic-tac-toe-react/tree/main)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Deployment to GitHub Pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For insights into how this React App was deployed on GitHub Pages:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+YouTube Tutorial:
+[Publish A React App To GitHub Pages - Less Than 3 Minutes](https://www.youtube.com/watch?v=4G6O0BIoq6M)
 
-### `npm run eject`
+Documentation:
+[gitname / react-gh-pages](https://github.com/gitname/react-gh-pages)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A friendly reminder to ensure accuracy when adding the `homepage` property in `package.json`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Format:  `https://{username}.github.io/{repo-name}`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to explore, provide feedback, and contribute! Enjoy playing Connect Four!

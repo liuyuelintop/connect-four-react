@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #242730;
   color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.connect-four-title {
+  font-family: 'Georgia', serif;
+  font-size: 3em;
+  color: goldenrod; /* 这将被渐变颜色覆盖 */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.2); /* 选择了 h1 样式中的更大的阴影 */
+  border: 2px solid goldenrod;
+  padding: 10px 20px;
+  background-color: #333; /* 如果渐变背景不适用，将采用这个颜色 */
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  background: -webkit-linear-gradient(left, yellow, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+
+  &:hover {
+      transform: scale(1.05);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+h1, h2 {
+  text-align: center;
+}
+
+/* h1 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #fff;
+  background: -webkit-linear-gradient(left, yellow, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  letter-spacing: 1px;
+} */
+
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  grid-template-rows: repeat(6, 60px);
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(69, 122, 227);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  color: currentColor;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.tile.R {
+  background-color: red;
+}
+
+.tile.Y {
+  background-color: yellow;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.tile.R-hover:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.tile.Y-hover:hover {
+  background-color: rgba(255, 255, 0, 0.6);
+}
+
+.game-over {
+  text-align: center;
+  border: #5468ff 8px;
+  border-style: dotted;
+  padding: 10px;
+  margin-top: 50px;
+  font-size: 1.5em;
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0074a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #005983;
 }
