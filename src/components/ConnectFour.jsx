@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Board from "./Board";
 import GameOver from "./GameOver";
 import GameState from "./GameState";
+import checkWin from "../utils/checkWin";
 import gameOverSoundAsset from "../sounds/game_over.wav";
 import clickSoundAsset from "../sounds/click.wav";
 
@@ -12,19 +13,13 @@ clickSound.volume = 0.5;
 
 
 const ConnectFour = () => {
-  const [tiles, setTiles] = useState(Array(6).fill(Array(7).fill(null)));
+  const boardRowNum = 6;
+  const boardColNum = 7;
+  const [tiles, setTiles] = useState(Array(boardRowNum).fill(Array(boardColNum).fill(null)));
   const PLAYER_R = "R";
   const PLAYER_Y = "Y";
-  const [currentPlayer, setCurrentPlayer] = useState(PLAYER_R); // R = Red, Y = Yellow
+  const [currentPlayer, setCurrentPlayer] = useState(PLAYER_R);
   const [gameState, setGameState] = useState(GameState.inProgress);
-
-  const directions = [
-    { x: 1, y: 0 },
-    { x: 0, y: 1 },
-    { x: 1, y: 1 },
-    { x: 1, y: -1 },
-  ];
-
 
   useEffect(() => {
     if (tiles.some((tile) => tile !== null)) {
@@ -55,11 +50,12 @@ const ConnectFour = () => {
     }
     if (tiles[row][col] !== null) return;
 
-    if (row === 5 || tiles[row + 1][col] !== null) {
+    if (row === boardRowNum-1 || tiles[row + 1][col] !== null) {
       const newTiles = tiles.map((r) => [...r]);
       newTiles[row][col] = currentPlayer;
       setTiles(newTiles);
-      if (checkWinForTile(newTiles, row, col, currentPlayer)) {
+      let isWin= checkWin(newTiles,row,col,currentPlayer,4,{rows:boardRowNum, columns:boardColNum});
+      if (isWin) {
         currentPlayer === PLAYER_R
           ? setGameState(GameState.playerRwins)
           : setGameState(GameState.playerYwins);
@@ -72,52 +68,12 @@ const ConnectFour = () => {
   };
 
   const handleReset = () => {
-    setTiles(Array(6).fill(Array(7).fill(null)));
+    setTiles(Array(boardRowNum).fill(Array(boardColNum).fill(null)));
     setCurrentPlayer(PLAYER_R);
     setGameState(GameState.inProgress);
   };
 
-  function checkWinForTile(tiles, row, col, currentPlayer) {
-    for (let direction of directions) {
-      let count = 1; // 起始棋子
-      // 检查正方向
-      for (let i = 1; i < 4; i++) {
-        const x = col + direction.x * i;
-        const y = row + direction.y * i;
-        if (
-          x >= 0 &&
-          x < tiles[0].length &&
-          y >= 0 &&
-          y < tiles.length &&
-          tiles[y][x] === currentPlayer
-        ) {
-          count++;
-        } else {
-          break;
-        }
-      }
-      // 检查反方向
-      for (let i = 1; i < 4; i++) {
-        const x = col - direction.x * i;
-        const y = row - direction.y * i;
-        if (
-          x >= 0 &&
-          x < tiles[0].length &&
-          y >= 0 &&
-          y < tiles.length &&
-          tiles[y][x] === currentPlayer
-        ) {
-          count++;
-        } else {
-          break;
-        }
-      }
-      if (count >= 4) {
-        return true;
-      }
-    }
-    return false;
-  }
+
   return (
     <div className="connect-four-container">
       <Board playerTurn={currentPlayer} placeTile={placeTile} tiles={tiles} />
